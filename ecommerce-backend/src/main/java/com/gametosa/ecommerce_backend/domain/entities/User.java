@@ -1,9 +1,12 @@
 package com.gametosa.ecommerce_backend.domain.entities;
 
+import com.gametosa.ecommerce_backend.domain.Role;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -20,6 +23,9 @@ public class User {
     private UUID id;
 
     @Column(nullable = false)
+    private String username;
+
+    @Column(nullable = false)
     private String f_name;
 
     private String l_name;
@@ -31,6 +37,10 @@ public class User {
 
     @Column(unique = true, nullable = false)
     private String mobileNumber;
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    @Enumerated(EnumType.STRING)
+    Set<Role> roles = new HashSet<>();
 
     private boolean enabled;
 
