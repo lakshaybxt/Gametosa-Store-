@@ -12,7 +12,10 @@ import lombok.Setter;
 public class RegisterUserDto {
 
     @NotBlank(message = "User mobile number is required")
-    @Pattern(regexp = "^[5-9]\\d{9}$", message = "Invalid Indian mobile number")
+    @Pattern(
+            regexp = "^(\\+91|91)?[5-9]\\d{9}$",
+            message = "Invalid Indian mobile number"
+    )
     private String mobile;
 
     @Email(message = "Invalid email format")

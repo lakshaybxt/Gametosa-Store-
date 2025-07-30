@@ -6,6 +6,7 @@ import com.gametosa.ecommerce_backend.domain.entities.User;
 import com.gametosa.ecommerce_backend.exceptions.UserAlreadyExistsException;
 import com.gametosa.ecommerce_backend.repository.UserRepository;
 import com.gametosa.ecommerce_backend.service.AuthenticationService;
+import com.gametosa.ecommerce_backend.service.SmsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder encoder;
+    private final SmsService smsService;
 
     @Override
     public User signup(RegisterUserDto register) {
@@ -37,7 +39,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                 .password(encoder.encode(register.getPassword()))
                 .roles(Set.of(Role.CUSTOMER))
                 .verificationCode(generateVerificationCode())
-                .verificationCodeExpiration(LocalDateTime.now().plusMinutes(15))
+                .verificationCodeExpiration(LocalDateTime.now().plusMinutes(60))
                 .build();
 
         User savedUser = userRepository.save(user);
@@ -47,6 +49,8 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     }
 
     private void sendVerficationCode(User user) {
+        String message = "Your OTP code is: " + user.getVerificationCode();
+        smsService.sendSms(user.getMobileNumber(), message);
     }
 
     private String generateVerificationCode() {
