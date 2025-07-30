@@ -54,7 +54,7 @@ public class User {
     private String verificationCode;
 
     @Column(name = "verification_expiration")
-    private LocalDateTime VerificationCodeExpiration;
+    private LocalDateTime verificationCodeExpiration;
 
     @PrePersist
     public void onCreate() {
