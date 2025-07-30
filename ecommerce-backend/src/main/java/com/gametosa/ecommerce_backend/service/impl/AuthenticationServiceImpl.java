@@ -43,12 +43,12 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                 .build();
 
         User savedUser = userRepository.save(user);
-        sendVerficationCode(savedUser);
+        sendVerificationCode(savedUser);
 
         return savedUser;
     }
 
-    private void sendVerficationCode(User user) {
+    private void sendVerificationCode(User user) {
         String message = "Your OTP code is: " + user.getVerificationCode();
         smsService.sendSms(user.getMobileNumber(), message);
     }
