@@ -2,6 +2,7 @@ package com.gametosa.ecommerce_backend.domain.entities;
 
 import com.gametosa.ecommerce_backend.domain.Role;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -10,7 +11,11 @@ import java.util.Set;
 import java.util.UUID;
 
 @Entity
-@Table(name = "users")
+@Table(name = "users", indexes = {
+        @Index(name = "idx_username", columnList = "username"),
+        @Index(name = "idx_mobile", columnList = "mobileNumber"),
+        @Index(name = "idx_email", columnList = "email")
+})
 @Getter
 @Setter
 @AllArgsConstructor
@@ -30,6 +35,8 @@ public class User {
 
     private String l_name;
 
+    @Email
+    @Column(unique = true)
     private String email;
 
     @Column(nullable = false)
@@ -38,11 +45,13 @@ public class User {
     @Column(unique = true, nullable = false)
     private String mobileNumber;
 
+    @Builder.Default
     @ElementCollection(fetch = FetchType.EAGER)
     @Enumerated(EnumType.STRING)
     Set<Role> roles = new HashSet<>();
 
-    private boolean enabled;
+    @Builder.Default
+    private boolean enabled = false;
 
     @Column(nullable = false)
     private LocalDateTime createdAt;
