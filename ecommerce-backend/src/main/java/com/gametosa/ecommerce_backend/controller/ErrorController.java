@@ -2,6 +2,8 @@ package com.gametosa.ecommerce_backend.controller;
 
 import com.gametosa.ecommerce_backend.domain.dto.error.ErrorDto;
 import com.gametosa.ecommerce_backend.exceptions.BaseException;
+import com.gametosa.ecommerce_backend.exceptions.BrandAlreadyExistException;
+import com.gametosa.ecommerce_backend.exceptions.CategoryAlreadyExistException;
 import com.gametosa.ecommerce_backend.exceptions.UserAlreadyExistsException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -66,6 +68,30 @@ public class ErrorController {
 
         ErrorDto error = ErrorDto.builder()
                 .status(HttpStatus.CONFLICT.value())
+                .message(ex.getMessage())
+                .build();
+
+        return new ResponseEntity<>(error, HttpStatus.CONFLICT);
+    }
+
+    @ExceptionHandler(BrandAlreadyExistException.class)
+    public ResponseEntity<ErrorDto> handleBrandAlreadyExistException(BrandAlreadyExistException ex) {
+        log.error("Brand already exist", ex);
+
+        ErrorDto error = ErrorDto.builder()
+                .status(HttpStatus.CONTINUE.value())
+                .message(ex.getMessage())
+                .build();
+
+        return new ResponseEntity<>(error, HttpStatus.CONFLICT);
+    }
+
+    @ExceptionHandler(CategoryAlreadyExistException.class)
+    public ResponseEntity<ErrorDto> handleCategoryAlreadyExistException(CategoryAlreadyExistException ex) {
+        log.error("Category already exist", ex);
+
+        ErrorDto error = ErrorDto.builder()
+                .status(HttpStatus.CONTINUE.value())
                 .message(ex.getMessage())
                 .build();
 

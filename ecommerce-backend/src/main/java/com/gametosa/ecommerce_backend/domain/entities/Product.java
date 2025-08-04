@@ -18,6 +18,9 @@ import java.util.UUID;
         @Index(name = "idx_product_brand", columnList = "brand_id"),
         @Index(name = "idx_product_category", columnList = "category_id"),
         @Index(name = "idx_product_price", columnList = "originalPrice"),
+        @Index(name = "idx_product_active_stock", columnList = "isActive, inStock"),
+        @Index(name = "idx_product_featured", columnList = "isFeatured"),
+        @Index(name = "idx_product_sku", columnList = "sku")
 })
 @Getter
 @Setter
@@ -64,6 +67,35 @@ public class Product {
     @Builder.Default
     private boolean inStock = true;
 
+    @Builder.Default
+    private Integer stackQuantity = 0;
+
+    @Column(unique = true, length = 100)
+    private String sku;
+
+    @Column(precision = 8, scale = 2)
+    private BigDecimal weight;
+
+    @ElementCollection
+    @CollectionTable(name = "product_tags", joinColumns = @JoinColumn(name = "product_id"))
+    @Column(name = "tag", length = 50)
+    @Builder.Default
+    private List<String> tags = new ArrayList<>();
+
+    @Column(nullable = false)
+    @Builder.Default
+    private boolean isActive = true;
+
+    @Column(nullable = false)
+    @Builder.Default
+    private boolean isFeatured = false;
+
+    @Column(length = 50)
+    private String color;
+
+    @Column(length = 50)
+    private String size;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "brand_id")
     private Brand brand;
@@ -82,16 +114,16 @@ public class Product {
     public void onCreate() {
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
-        calculatedDiscountedPrice();
+        calculateDiscountedPrice();
     }
 
     @PreUpdate
     public void onUpdate() {
         this.updatedAt = LocalDateTime.now();
-        calculatedDiscountedPrice();
+        calculateDiscountedPrice();
     }
 
-    private void calculatedDiscountedPrice() {
+    private void calculateDiscountedPrice() {
         if(originalPrice != null && discount > 0) {
             BigDecimal discountAmount = originalPrice.multiply(BigDecimal.valueOf(discount))
                     .divide(BigDecimal.valueOf(100));

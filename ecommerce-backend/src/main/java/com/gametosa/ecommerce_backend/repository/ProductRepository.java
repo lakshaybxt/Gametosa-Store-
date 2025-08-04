@@ -1,4 +1,11 @@
 package com.gametosa.ecommerce_backend.repository;
 
-public interface ProductRepository {
+import com.gametosa.ecommerce_backend.domain.entities.Product;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.UUID;
+
+@Repository
+public interface ProductRepository extends JpaRepository<Product, UUID> {
 }

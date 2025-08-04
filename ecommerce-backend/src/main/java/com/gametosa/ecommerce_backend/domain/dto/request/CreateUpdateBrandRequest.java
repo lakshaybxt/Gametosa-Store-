@@ -9,7 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CreateBrandRequest {
+public class CreateUpdateBrandRequest {
 
     @NotBlank(message = "Brand name is required")
     private String name;
