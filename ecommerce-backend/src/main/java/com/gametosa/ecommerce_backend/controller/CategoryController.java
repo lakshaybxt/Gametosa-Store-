@@ -1,10 +1,7 @@
 package com.gametosa.ecommerce_backend.controller;
 
-import com.gametosa.ecommerce_backend.domain.dto.request.CreateUpdateBrandRequest;
 import com.gametosa.ecommerce_backend.domain.dto.request.CreateUpdateCategoryRequest;
-import com.gametosa.ecommerce_backend.domain.dto.response.BrandResponse;
 import com.gametosa.ecommerce_backend.domain.dto.response.CategoryResponse;
-import com.gametosa.ecommerce_backend.domain.entities.Brand;
 import com.gametosa.ecommerce_backend.domain.entities.Category;
 import com.gametosa.ecommerce_backend.mapper.CategoryMapper;
 import com.gametosa.ecommerce_backend.service.CategoryService;

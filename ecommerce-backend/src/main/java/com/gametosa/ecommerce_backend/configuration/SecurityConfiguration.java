@@ -58,6 +58,7 @@ public class SecurityConfiguration {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(List.of(
                 "https://backend.com", // will change as per the website
+                "http://localhost:5432",
                 "http://localhost:5500",
                 "http://127.0.0.1:8000",
                 "http://localhost:8080",

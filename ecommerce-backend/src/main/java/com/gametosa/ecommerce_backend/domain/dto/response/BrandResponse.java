@@ -1,7 +1,5 @@
 package com.gametosa.ecommerce_backend.domain.dto.response;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
