@@ -13,7 +13,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CreateUpdateProductRequest {
+public class CreateProductRequest {
     @NotBlank(message = "Product name is required")
     private String name;
 

@@ -118,4 +118,16 @@ public class ErrorController {
 
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(BusinessRuleException.class)
+    public ResponseEntity<ErrorDto> handleBusinessRuleException(BusinessRuleException ex) {
+        log.error("BusinessRuleException: {}", ex.getMessage());
+
+        ErrorDto error = ErrorDto.builder()
+                .status(HttpStatus.IM_USED.value())
+                .message(ex.getMessage())
+                .build();
+
+        return new ResponseEntity<>(error, HttpStatus.IM_USED);
+    }
 }
