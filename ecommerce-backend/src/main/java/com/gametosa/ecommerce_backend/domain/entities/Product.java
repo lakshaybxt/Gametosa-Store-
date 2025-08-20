@@ -8,9 +8,7 @@ import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Entity
 @Table(name = "product", indexes = {
@@ -103,6 +101,13 @@ public class Product {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private Category category;
+
+    @Builder.Default
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<CartItem> cartItems = new ArrayList<>();
+
+    @ManyToMany(mappedBy = "products")
+    private Set<Wishlist> wishlists = new HashSet<>();
 
     @Column(nullable = false)
     private LocalDateTime createdAt;

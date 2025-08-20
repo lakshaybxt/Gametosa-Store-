@@ -7,6 +7,7 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -48,7 +49,13 @@ public class User {
     @Builder.Default
     @ElementCollection(fetch = FetchType.EAGER)
     @Enumerated(EnumType.STRING)
-    Set<Role> roles = new HashSet<>();
+    private Set<Role> roles = new HashSet<>();
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private Cart cart;
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private Wishlist wishlist;
 
     @Builder.Default
     private boolean enabled = false;

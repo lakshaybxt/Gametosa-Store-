@@ -2,6 +2,7 @@ package com.gametosa.ecommerce_backend.controller;
 
 import com.gametosa.ecommerce_backend.domain.dto.error.ErrorDto;
 import com.gametosa.ecommerce_backend.exceptions.*;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -129,5 +130,17 @@ public class ErrorController {
                 .build();
 
         return new ResponseEntity<>(error, HttpStatus.IM_USED);
+    }
+
+    @ExceptionHandler(EntityNotFoundException.class)
+    public ResponseEntity<ErrorDto> handleEntityNotFoundException(EntityNotFoundException ex) {
+        log.error("EntityNotFoundException: {}", ex.getMessage());
+
+        ErrorDto error = ErrorDto.builder()
+                .status(HttpStatus.NOT_FOUND.value())
+                .message(ex.getMessage())
+                .build();
+
+        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
     }
 }
