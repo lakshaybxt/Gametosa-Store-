@@ -40,6 +40,9 @@ public class CreateProductRequest {
 
     private boolean inStock;
 
+    @Min(value = 1, message = "Delivery days cannot be that short")
+    private int deliveryDays;
+
     @Min(value = 0, message = "Stock quantity cannot be negative")
     private Integer stackQuantity;
 

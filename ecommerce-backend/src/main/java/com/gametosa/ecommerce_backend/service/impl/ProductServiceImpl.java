@@ -53,6 +53,7 @@ public class ProductServiceImpl implements ProductService {
                 .shortDescription(request.getShortDescription())
                 .originalPrice(request.getOriginalPrice())
                 .discount(request.getDiscount())
+                .deliveryDays(request.getDeliveryDays())
                 .imageUrls(request.getImageUrls())
                 .color(request.getColor())
                 .size(request.getSize())

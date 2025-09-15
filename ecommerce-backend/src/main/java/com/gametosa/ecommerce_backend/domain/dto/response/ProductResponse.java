@@ -19,6 +19,7 @@ public class ProductResponse {
     private Rating rating;
     private BigDecimal originalPrice;
     private int discount;
+    private int deliveryDays;
     private BigDecimal discountedPrice;
     private String description;
     private String shortDescription;

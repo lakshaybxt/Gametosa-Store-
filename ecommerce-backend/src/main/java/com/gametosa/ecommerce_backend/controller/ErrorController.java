@@ -132,6 +132,30 @@ public class ErrorController {
         return new ResponseEntity<>(error, HttpStatus.IM_USED);
     }
 
+    @ExceptionHandler(EmptyCartException.class)
+    public ResponseEntity<ErrorDto> handleEmptyCartException(EmptyCartException ex) {
+        log.error("Empty Cart Exception: {}", ex.getMessage());
+
+        ErrorDto error = ErrorDto.builder()
+                .status(HttpStatus.BAD_REQUEST.value())
+                .message(ex.getMessage())
+                .build();
+
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(InsufficientStockException.class)
+    public ResponseEntity<ErrorDto> handleInsufficientStockException(InsufficientStockException ex) {
+        log.error("Insufficient Stock Exception: {}", ex.getMessage());
+
+        ErrorDto error = ErrorDto.builder()
+                .status(HttpStatus.BAD_REQUEST.value())
+                .message(ex.getMessage())
+                .build();
+
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    }
+
     @ExceptionHandler(EntityNotFoundException.class)
     public ResponseEntity<ErrorDto> handleEntityNotFoundException(EntityNotFoundException ex) {
         log.error("EntityNotFoundException: {}", ex.getMessage());
