@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Stylish Headphones",
+    "image": "/assets/images/keyboard.png",
+    "price": 1499,
+    "oldPrice": 3000,
+    "discount": 50,
+    "status": "In Stock",
+    "rating": 4.5
+  },
+  {
+    "id": 2,
+    "name": "Gametosa Premium Watch",
+    "image": "/assets/images/gamingHeadset2.png",
+    "price": 3499,
+    "oldPrice": 5000,
+    "discount": 30,
+    "status": "In Stock",
+    "rating": 4.2
+  },
+  {
+    "id": 3,
+    "name": "Gaming Mouse",
+    "image": "/assets/images/keyboard.png",
+    "price": 1599,
+    "oldPrice": 2000,
+    "discount": 20,
+    "status": "Out of Stock",
+    "rating": 4.7
+  },
+  {
+    "id": 4,
+    "name": "Gaming Headset",
+    "image": "/assets/images/gamingHeadset1.png",
+    "price": 1999,
+    "oldPrice": 2500,
+    "discount": 20,
+    "status": "In Stock",
+    "rating": 4.3
+  },
+  {
+    "id": 5,
+    "name": "Mechanical Keyboard",
+    "image": "/assets/images/keyboard.png",
+    "price": 2999,
+    "oldPrice": 3500,
+    "discount": 15,
+    "status": "In Stock",
+    "rating": 4.6
+  },
+    {
+    "id": 6,
+    "name": "Wireless Keyboard",
+    "image": "/assets/images/gamingHeadset2.png",
+    "price": 2999,
+    "oldPrice": 3500,
+    "discount": 15,
+    "status": "In Stock",
+    "rating": 4.6
+  }
+]

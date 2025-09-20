@@ -1,0 +1,40 @@
+{
+  "productName": "Wireless Headphones",
+  "productImage": "src/assets/icons/headset1.png",
+  "color": "Black",
+  "discount": 20,
+  "oldPrice": 4999,
+  "newPrice": 3999,
+  "quantity": 1,
+  "arrivedText": "Arriving Today",
+  "steps": [
+    {
+      "title": "Order Placed",
+      "description": "We have received your order.",
+      "timestamp": "Sep 15, 2025 - 10:30 AM",
+      "completed": true
+    },
+    {
+      "title": "Shipped",
+      "description": "Your order has been shipped.",
+      "timestamp": "Sep 16, 2025 - 03:20 PM",
+      "completed": true
+    },
+    {
+      "title": "Out for Delivery",
+      "description": "Courier is on the way.",
+      "timestamp": "Sep 18, 2025 - 07:00 AM",
+      "completed": true
+    },
+    {
+      "title": "Delivered",
+      "description": "Package will be delivered soon.",
+      "completed": false
+    }
+  ],
+  "deliveryGuy": {
+    "name": "Rohit Kumar",
+    "role": "Delivery Partner",
+    "image": "src/assets/icons/Ellipse 27.svg"
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "10% Off on First Order",
+    "subtitle": "Use code FIRST10 to get 10% discount",
+    "img": "/src/assets/images/coin.png"
+  },
+  {
+    "id": 2,
+    "title": "Free Shipping",
+    "subtitle": "Get free shipping on orders above $50",
+    "img": "/src/assets/images/coin.png"
+  },
+  {
+    "id": 3,
+    "title": "Buy 1 Get 1 Free",
+    "subtitle": "Applicable on select products only",
+    "img": "/src/assets/images/coin.png"
+  },
+  {
+    "id": 4,
+    "title": "20% Off Electronics",
+    "subtitle": "Use code ELECTRO20 on electronics",
+    "img": "/src/assets/images/coin.png"
+  },
+  {
+    "id": 5,
+    "title": "5$ Cashback",
+    "subtitle": "Get $5 cashback on payments via XYZ Wallet",
+    "img": "/src/assets/images/coin.png"
+  }
+]
