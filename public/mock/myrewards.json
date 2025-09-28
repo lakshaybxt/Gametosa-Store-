@@ -1,0 +1,57 @@
+{
+  "rewards": [
+    {
+      "id": 1,
+      "title": "Amazon Voucher",
+      "validity": "Valid till 31 Dec 2025"
+    },
+    {
+      "id": 2,
+      "title": "Flipkart Voucher",
+      "validity": "Valid till 31 Dec 2025"
+    },
+    {
+      "id": 3,
+      "title": "Spotify Premium",
+      "validity": "Valid till 30 Nov 2025"
+    },
+    {
+      "id": 4,
+      "title": "Netflix Subscription",
+      "validity": "Valid till 31 Dec 2025"
+    },
+    {
+      "id": 5,
+      "title": "Starbucks Gift Card",
+      "validity": "Valid till 31 Oct 2025"
+    },
+    {
+      "id": 6,
+      "title": "Google Play Gift",
+      "validity": "Valid till 31 Dec 2025"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "icon": "bell",
+      "title": "Daily Login",
+      "subtitle": "Earn points by logging in daily",
+      "cta": "Claim"
+    },
+    {
+      "id": 2,
+      "icon": "cart",
+      "title": "Complete Purchase",
+      "subtitle": "Earn points on first purchase",
+      "cta": "Shop Now"
+    },
+    {
+      "id": 3,
+      "icon": "mail",
+      "title": "Subscribe Newsletter",
+      "subtitle": "Get points by subscribing",
+      "cta": "Subscribe"
+    }
+  ]
+}

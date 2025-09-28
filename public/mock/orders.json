@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "product": "TMA-2 Comfort Wireless Headphones",
+    "img": "src/assets/images/keyboard.png",
+    "status": "Delivered",
+    "color": "Black",
+    "quantity": 1,
+    "oldPrice": 300,
+    "newPrice": 270,
+    "discount": 10,
+    "trackable": false
+  },
+  {
+    "id": 2,
+    "product": "Razer Gaming Mouse",
+    "img": "src/assets/images/keyboard.png",
+    "status": "Shipped",
+    "color": "Green",
+    "quantity": 2,
+    "oldPrice": 100,
+    "newPrice": 89,
+    "discount": 11,
+    "trackable": true
+  },
+  {
+    "id": 3,
+    "product": "Mechanical RGB Keyboard",
+    "img": "src/assets/images/keyboard.png",
+    "status": "Processing",
+    "color": "White",
+    "quantity": 1,
+    "oldPrice": 150,
+    "newPrice": 129,
+    "discount": 14,
+    "trackable": true
+  },
+  {
+    "id": 4,
+    "product": "Gaming Chair",
+    "img": "src/assets/images/keyboard.png",
+    "status": "Delivered",
+    "color": "Red",
+    "quantity": 1,
+    "oldPrice": 400,
+    "newPrice": 350,
+    "discount": 12,
+    "trackable": false
+  },
+  {
+    "id": 5,
+    "product": "VR Headset",
+    "img": "src/assets/images/keyboard.png",
+    "status": "Shipped",
+    "color": "Black",
+    "quantity": 1,
+    "oldPrice": 500,
+    "newPrice": 450,
+    "discount": 10,
+    "trackable": true
+  }
+]

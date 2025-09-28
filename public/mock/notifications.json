@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "type": "new",
+    "message": "Mega sale is Back!! Get up to 70% off on all Accessories. Ends on July 30 Grab it before offer ends!!"
+  },
+  {
+    "id": 2,
+    "type": "new",
+    "message": "Your order #GAM12345 has been shipped and will be delivered soon."
+  },
+  {
+    "id": 3,
+    "type": "old",
+    "message": "Mega sale is Back!! Get up to 70% off on all Accessories. Ends on July 12 Grab it before offer ends!!"
+  },
+  {
+    "id": 4,
+    "type": "old",
+    "message": "Your order #GAM09876 has been successfully delivered. Thank you for shopping with us!"
+  }
+]
